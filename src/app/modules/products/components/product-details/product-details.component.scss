@@ -1,0 +1,12 @@
+.productImg {
+  border-radius: 15px 0 0 15px;
+  .img-prod {
+    margin: auto;
+    top: 0px;
+    left: 0;
+    right: 50%;
+    bottom: 0;
+    transform: skewX(10deg);
+    border-radius: 15px;
+  }
+}

@@ -1,0 +1,52 @@
+<div class="flex">
+    <div class="productImg w-[50%]">
+        <img src="../../../../../assets/productdetailsimg/bg.svg" class="relative w-full">
+        <img [src]="product.ProductImg" alt="" class="absolute w-[33%] img-prod">
+    </div>
+    <div class="mt-12 px-12">
+        <h1 class="font-bold text-2xl">{{product?.ProductName}} </h1>
+        <div class="flex items-end">
+            <div class="text-ta-green-350 mt-3">
+                Cat Food |
+            </div>
+            <form [formGroup]="form" class="flex ">
+                <div *ngFor="let control of rating.controls; let i=index" formArrayName="rating" class="flex">
+                    <ngx-star-rating [formControlName]="i" [id]="product?.rating" [disabled]="true"></ngx-star-rating>
+                    <div> {{product?.rating}}</div>
+                </div>
+            </form>
+        </div>
+        <div class="mt-3 w-[80%]">
+            <p class="font-bold">Description:</p>
+            <ul class="list-disc ms-5">
+                <li>
+                    Makanan yang lengkap dan seimbang, dengan 41 nutrisi penting.
+                </li>
+                <li>
+                    Mengandung antioksidan (vitamin E dan selenium) untuk sistem kekebalan tubuh yang sehat.
+                </li>
+                <li>
+                    Mengandung serat untuk memperlancar pencernaan dan meningkatkan kesehatan usus.
+                </li>
+                <li>
+                    Diperkaya dengan kalsium, fosfor dan vitamin D untuk tulang yang sehat.
+                </li>
+            </ul>
+        </div>
+
+        <div class="ingrediants mt-5">
+            <p class="font-bold">Ingrediants</p>
+            <ul class="list-disc ms-5">
+                <li>
+                    Nutrisi
+                </li>
+                <li>
+                    Vitamin E
+                </li>
+                <li>
+                    Protein
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

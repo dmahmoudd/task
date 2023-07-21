@@ -106,10 +106,15 @@ const addSelectors = (container, modifierFunction) => {
             200: '#7bc570',
             250:"#11958A",
             300:'#17A63F',
+            350:'#50CC98'
           },
           'ta-black':{
             50:'#0E0E14',
-            100:'#7A7A7A'
+            100:'#7A7A7A',
+            150:'#19191D'
+          },
+          'ta-blue':{
+            50:'#2264D1'
           },
           'ta-download': '#b6301e',
           'ta-dark-steel-blue': '#283b54',

@@ -3,3 +3,20 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+label.star{
+    padding: 5px !important;
+    font-size: 12px !important;
+    padding-bottom: 0 !important;
+}
+.mat-toolbar{
+    background-color: white !important;
+}
+.watchList{
+    .mat-icon{
+        width: 17px;
+        height: 17px;
+    }
+    .material-icons{
+        font-size: 17px;
+    }
+}
