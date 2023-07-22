@@ -1,1 +1,21 @@
-<p>order-details works!</p>
+<div *ngFor="let product of allProductsInCart" class="shadow-2xl my-3">
+    <mat-card class="example-card ">
+        <mat-card-content>
+            <img mat-card-image src="{{product.ProductImg}}" alt="Product image" width="50" height="50">
+            <p>
+                {{product.ProductName}}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>items : {{product.countItems}}</button>
+            <button mat-button>Total Price : {{(product?.countItems||0) *( product?.ProductPrice||0)}} </button>
+        </mat-card-actions>
+    </mat-card>
+  
+</div>
+
+<div class="flex justify-center">
+    <button class="bg-ta-purple-150 text-white px-10 py-3 rounded-lg ">
+        Total price : {{sum}}
+    </button>
+</div>

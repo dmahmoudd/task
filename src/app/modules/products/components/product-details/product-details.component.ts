@@ -15,7 +15,7 @@ export class ProductDetailsComponent implements OnInit {
   ) {}
 
   form!: FormGroup;
-  product!: productModel;
+  product!: Partial<productModel>;
   defaultCount: number = 1;
 
   ngOnInit(): void {
@@ -60,5 +60,6 @@ export class ProductDetailsComponent implements OnInit {
   addToCart(productName:productModel){
     this.product.countItems=this.defaultCount
     this.ProductService.addToCart$.next(productName)
+    this.ProductService.setproduct(productName)
   }
 }

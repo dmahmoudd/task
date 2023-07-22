@@ -6,10 +6,17 @@ import { productModel } from '../models/products.model';
   providedIn: 'root'
 })
 export class ProductDetailsService {
-
+  productsInCart:productModel[]=[]
   constructor() { }
 
-  prodDEtails=new BehaviorSubject<productModel>({})
+  prodDEtails=new BehaviorSubject<Partial<productModel>>({})
   searchInput$=new BehaviorSubject('')
-  addToCart$=new BehaviorSubject<productModel>({})
+  addToCart$=new BehaviorSubject<Partial<productModel>>({})
+
+  setproduct(products:productModel){
+    this.productsInCart.push(products) 
+  }
+  getproducts(){
+    return this.productsInCart
+  }
 }

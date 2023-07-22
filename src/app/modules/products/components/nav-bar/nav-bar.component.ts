@@ -18,7 +18,8 @@ export class NavBarComponent implements OnInit {
 
   querParams = {};
 
-  productcount:number| undefined=0
+  productcount: number = 0;
+
   ngOnInit(): void {
     this.querParams = this.acRoute.queryParams.subscribe({
       next: (params) => {
@@ -27,12 +28,15 @@ export class NavBarComponent implements OnInit {
     });
     this.prodService.addToCart$.subscribe({
       next: (res) => {
-        if(Object.keys(res).length !== 0 ){
-          this.productcount=res.countItems
+        if (Object.keys(res).length !== 0) {
+          const products = this.prodService.getproducts().forEach((prod) => {
+            this.productcount += prod.countItems || 0;
+          });
         }
       },
     });
   }
+
   sreach() {
     if (this.searchWord) {
       this.prodService.searchInput$.next(this.searchWord);
@@ -47,4 +51,8 @@ export class NavBarComponent implements OnInit {
       this.prodService.searchInput$.next('');
     }
   }
+
+  // goToOrderDetails(){
+  //   this.router.navigateByUrl('/order-details')
+  // }
 }

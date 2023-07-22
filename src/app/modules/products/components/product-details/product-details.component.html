@@ -18,7 +18,7 @@
                 <div class="text-ta-green-350 mt-3">
                     Cat Food |
                 </div>
-              
+
                 <form [formGroup]="form" class="flex ">
                     <div *ngFor="let control of rating.controls; let i=index" formArrayName="rating" class="flex">
                         <ngx-star-rating [formControlName]="i" [id]="product?.rating"
@@ -44,6 +44,28 @@
                         Diperkaya dengan kalsium, fosfor dan vitamin D untuk tulang yang sehat.
                     </li>
                 </ul>
+                <div class=" mt-5 productImg">
+                    <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+                        <mat-button-toggle value="" class="ms-2 " checked>
+                            <img [src]="product.ProductImg" width="70" height="70" alt="" class="rounded-md ">
+                        </mat-button-toggle>
+                        <mat-button-toggle value="" class="ms-2"><img [src]="product.ProductImg" class="rounded-md"
+                                width="70" height="70" alt=""></mat-button-toggle>
+                        <mat-button-toggle value="" class="ms-2"><img [src]="product.ProductImg" class="rounded-md "
+                                width="70" height="70" alt=""></mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
+
+            </div>
+
+
+            <div class=" mt-5 productSize">
+                <p class="font-bold mb-2">Size</p>
+                <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+                    <mat-button-toggle value="1.5kg" class="ms-2" checked>1.5Kg</mat-button-toggle>
+                    <mat-button-toggle value="1kg" class="ms-2">1Kg</mat-button-toggle>
+                    <mat-button-toggle value="2kg" class="ms-2">2kg</mat-button-toggle>
+                </mat-button-toggle-group>
             </div>
 
             <div class="ingrediants mt-5">

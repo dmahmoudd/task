@@ -58,7 +58,8 @@ const addSelectors = (container, modifierFunction) => {
           'ta-purple':{
             50:'#6C63FF',
             100:"#a15ee3",
-            150:'#828EF9'
+            150:'#828EF9',
+            200:'#EBEDFB'
           },
           'ta-gray': {
             50: '#ebebeb',

@@ -1,0 +1,28 @@
+.productSize {
+  .mat-button-toggle-standalone:not([class*="mat-elevation-z"]),
+  .mat-button-toggle-group:not([class*="mat-elevation-z"]) {
+    box-shadow: none !important;
+  }
+  .mat-button-toggle-checked {
+    background-color: #818af9 !important;
+    color: white !important;
+    border-radius: 10px !important;
+    padding-block: 3px !important;
+  }
+}
+
+.productImg{
+    .mat-button-toggle-standalone:not([class*="mat-elevation-z"]),
+    .mat-button-toggle-group:not([class*="mat-elevation-z"]) {
+      box-shadow: none !important;
+    }
+    .mat-button-toggle-checked {
+        background-color: #EBEDFB !important;
+        color: white !important;
+        border-radius: 10px !important;
+        padding-block: 3px !important;
+      }
+      .mat-button-toggle-label-content{
+        padding: 0 6px !important;
+      }
+}

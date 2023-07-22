@@ -32,7 +32,6 @@ export class CartComponent implements OnInit {
           })
         }
         else{
-          console.log(res,'res')
           this.products = data.data;
         }
       }

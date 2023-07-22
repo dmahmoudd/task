@@ -15,14 +15,19 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 @NgModule({
   declarations: [CartComponent, FiltersComponent,ProductsComponent, OrderDetailsComponent, ProductDetailsComponent, NavBarComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule,
     MatIconModule,
+    MatButtonToggleModule,
     NgxStarRatingModule,
     FormsModule,
+    MatCardModule,
     ReactiveFormsModule,
     MatExpansionModule,
     MatToolbarModule,
