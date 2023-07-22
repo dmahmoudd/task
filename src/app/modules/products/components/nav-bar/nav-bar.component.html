@@ -1,7 +1,16 @@
-<mat-toolbar color="white">
+<mat-toolbar class=" flex-wrap">
     <span><img src="../../../../../assets/productdetailsimg/Logo.svg" alt=""></span>
-     <a mat-button>Sell on shopka</a>
-     <a mat-button>Register</a>
-     <a mat-button>Contact</a>
-   </mat-toolbar>
-   
+    <a mat-button>Sell on shopka</a>
+    <a mat-button>Register</a>
+    <span class="example-spacer sm:flex hidden"></span>
+    <input type="text" name="" id="" [(ngModel)]="searchWord" (input)="sreach()" placeholder="Search by product name"
+        class="bg-ta-gray-1800 rounded-2xl hover:outline-none focus:outline-none px-3 lg:w-[28%] md:w-[21%]  w-full">
+    <span class="example-spacer "></span>
+    <a mat-button class="!text-ta-blue-50 !border !border-ta-blue-50">Sign In</a>
+    <a mat-button class="!text-ta-blue-50 !border !border-ta-blue-50 relative" matBadge="{{productcount}}"
+        matBadgePosition="after" matBadgeColor="warn">
+        My Cart
+    </a>
+    <a mat-button><img src="../../../../../assets/productdetailsimg/Male.svg" class="rounded-full" width="30"
+            height="30" alt=""></a>
+</mat-toolbar>

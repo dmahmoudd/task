@@ -10,4 +10,6 @@ export class ProductDetailsService {
   constructor() { }
 
   prodDEtails=new BehaviorSubject<productModel>({})
+  searchInput$=new BehaviorSubject('')
+  addToCart$=new BehaviorSubject<productModel>({})
 }

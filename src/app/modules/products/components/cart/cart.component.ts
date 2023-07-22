@@ -21,6 +21,22 @@ export class CartComponent implements OnInit {
     this.form = this.fb.group({
       rating: this.fb.array([]),
     });
+    this.ProductService.searchInput$.subscribe({
+      next:(res)=>{
+        if(res){
+          this.products=[]
+          data.data.find((searchedProd)=>{
+            if(searchedProd.ProductName==res){
+              this.products.push(searchedProd)
+            }
+          })
+        }
+        else{
+          console.log(res,'res')
+          this.products = data.data;
+        }
+      }
+    })
   }
 
   ngAfterViewInit(){

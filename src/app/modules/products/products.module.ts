@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { ProductsRoutingModule } from './products-routing.module';
 import { CartComponent } from './components/cart/cart.component';
@@ -25,7 +26,8 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatExpansionModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatBadgeModule
   ],
 })
 export class ProductsModule {}

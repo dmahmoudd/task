@@ -11,6 +11,11 @@ label.star{
 .mat-toolbar{
     background-color: white !important;
 }
+ .mat-toolbar-single-row{
+@media screen and (max-width:767px) {
+    height: auto;
+}
+}
 .watchList{
     .mat-icon{
         width: 17px;

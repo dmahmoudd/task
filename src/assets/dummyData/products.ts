@@ -3,7 +3,7 @@ export default
   "data":[
     {
       "ProductId": 123,
-      "ProductName": "Whiskas® Dry Adult Dewasa 7+, Cat food Rasa Mackerel",
+      "ProductName": "Whiskas Dry Adult Dewasa 7+, Cat food Rasa Mackerel",
       "ProductPrice": 122,
       "AvailablePieces": 25,
       "ProductImg": "https://www.decolore.net/wp-content/uploads/2017/04/product-mock-up-set-2.jpg",

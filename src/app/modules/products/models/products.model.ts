@@ -6,4 +6,5 @@ export interface productModel{
     ProductImg?:string,
     category?:string,
     rating?: any,
+    countItems?:number
 }
