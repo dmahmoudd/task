@@ -60,7 +60,6 @@ export class ProductDetailsComponent implements OnInit {
   addToCart(pName:productModel){
     this.product.num=this.defaultCount
     this.ProductService.addToCart$.next(pName)
-    // this.ProductService.setproduct(pName)
 
     const productExistInCart = this.ProductService.getproducts().find((prod:any)=>{
       if(prod.ProductName==pName.ProductName){

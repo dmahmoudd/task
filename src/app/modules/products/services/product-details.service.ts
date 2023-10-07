@@ -11,6 +11,7 @@ export class ProductDetailsService {
 
   prodDEtails=new BehaviorSubject<Partial<productModel>>({})
   searchInput$=new BehaviorSubject('')
+  sum$=new BehaviorSubject(0)
   addToCart$=new BehaviorSubject<Partial<productModel>>({})
 
   setproduct(products:object){

@@ -57,7 +57,7 @@ export class CartComponent implements OnInit {
   }
   
   openDetails(product:productModel){
-    this.router.navigateByUrl('products/'+product.ProductId)
+    this.router.navigateByUrl('allproducts/products/'+product.ProductId)
     this.ProductService.prodDEtails.next(product)
   }
 }

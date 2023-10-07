@@ -5,11 +5,20 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
+      import('./modules/auth/auth.module').then(
+        (m) => m.AuthModule
+      ),
+
+  },
+  {
+    path: 'allproducts',
+    loadChildren: () =>
       import('./modules/products/products.module').then(
         (m) => m.ProductsModule
       ),
 
   },
+
   {
     path: 'GetStarted',
     loadChildren: () =>

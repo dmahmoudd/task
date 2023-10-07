@@ -5,33 +5,35 @@
 
     <div class="flex items-center justify-center flex-col">
         <h1 class="font-bold text-5xl"><span class="text-ta-purple-100 ">You</span>topia</h1>
-        <form class="flex flex-col  relative mt-6 items-center lg:w-[25%] w-auto" [formGroup]="form"
-            (submit)="createAccount()">
+        <form class="flex flex-col  relative mt-6 items-center lg:w-[25%] w-auto" [formGroup]="form" (submit)="login()">
             <div class="flex flex-col ">
                 <label for="" class="text-ta-purple-100">Email*</label>
                 <input type="text" formControlName="email">
                 <mat-error *ngIf="form.controls['email'].errors?.['required'] && form.controls['email'].touched"
-                class="flex">
+                    class="flex">
                     <mat-icon>remove_circle</mat-icon>
-                   Please enter a valid mail
+                    Please enter a valid mail
                 </mat-error>
             </div>
             <div class=" flex flex-col mt-4">
                 <label for="" class="text-ta-purple-100">Password*</label>
                 <div class="relative">
                     <input type="text" formControlName="password" [type]="!passwordHidden? 'password' :'text'">
-                    <img src="../../../../assets/loginPageImg/eye.svg" alt="hide password" 
-                    (click)="passwordHidden = !passwordHidden" class="absolute right-[12px] top-[18px]">
+                    <img src="../../../../assets/loginPageImg/eye.svg" alt="hide password"
+                        (click)="passwordHidden = !passwordHidden" class="absolute right-[12px] top-[18px]">
                 </div>
-                
+
                 <mat-error *ngIf="form.controls['password'].errors?.['required'] && form.controls['password'].touched"
-                class="flex">
+                    class="flex">
                     <mat-icon>remove_circle</mat-icon>
-                   Password is required
+                    Password is required
                 </mat-error>
                 <a class="ta-text-black-100 text-sm">Forget your <span class="text-ta-purple-100">password?</span></a>
             </div>
-        
+            <mat-error *ngIf="valid==false && form.status=='VALID'" class="flex align-center justify-center">
+                <mat-icon>remove_circle</mat-icon>
+                 enter a valid credential
+            </mat-error>
             <button type="submit" class="w-full text-ta-white bg-ta-purple-100 rounded-full p-3 mt-6 mb-3">
                 Login
             </button>

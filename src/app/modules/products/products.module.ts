@@ -17,9 +17,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { CheckoutDetailsComponent } from './components/checkout-details/checkout-details.component';
 
 @NgModule({
-  declarations: [CartComponent, FiltersComponent,ProductsComponent, OrderDetailsComponent, ProductDetailsComponent, NavBarComponent],
+  declarations: [CartComponent, FiltersComponent,ProductsComponent, OrderDetailsComponent, ProductDetailsComponent, NavBarComponent, CheckoutDetailsComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule,

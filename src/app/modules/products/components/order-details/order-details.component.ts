@@ -13,10 +13,10 @@ export class OrderDetailsComponent implements OnInit {
   sum:number=0
   ngOnInit(): void {
     this.allProductsInCart=this.productService.getproducts()
-    this.allProductsInCart.forEach((product)=>{
-    })
+   
     this.allProductsInCart.forEach((product)=>{
       this.sum+=(product.num||0)*(product.ProductPrice||0)
+      this.productService.sum$.next(this.sum)
     })
     
   }
@@ -26,14 +26,17 @@ export class OrderDetailsComponent implements OnInit {
     if(count=='decrement' && product.num>=1){
       this.allProductsInCart[index]==product.num--
       this.sum-=product.ProductPrice
+      this.productService.sum$.next(this.sum)
     }
     else if(count=='decrement' && product.num<=0){
       this.allProductsInCart.splice(index,1)
       this.sum-=product.ProductPrice
+      this.productService.sum$.next(this.sum)
     }
     else if(count=='increment'){
       this.allProductsInCart[index]==product.num++
       this.sum+=product.ProductPrice
+      this.productService.sum$.next(this.sum)
     }
   }
 }
