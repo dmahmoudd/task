@@ -14,8 +14,26 @@ export class OrderDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.allProductsInCart=this.productService.getproducts()
     this.allProductsInCart.forEach((product)=>{
-      this.sum+=(product.countItems||0)*(product.ProductPrice||0)
+    })
+    this.allProductsInCart.forEach((product)=>{
+      this.sum+=(product.num||0)*(product.ProductPrice||0)
     })
     
+  }
+
+  changeCount(count:string, product:any, index:any){
+    console.log(product)
+    if(count=='decrement' && product.num>=1){
+      this.allProductsInCart[index]==product.num--
+      this.sum-=product.ProductPrice
+    }
+    else if(count=='decrement' && product.num<=0){
+      this.allProductsInCart.splice(index,1)
+      this.sum-=product.ProductPrice
+    }
+    else if(count=='increment'){
+      this.allProductsInCart[index]==product.num++
+      this.sum+=product.ProductPrice
+    }
   }
 }

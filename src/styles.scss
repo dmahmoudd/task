@@ -4,6 +4,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import './assets/styles/buttonToggle';
+@import './assets/styles/matCard';
 label.star{
     padding: 5px !important;
     font-size: 12px !important;
@@ -26,3 +27,18 @@ label.star{
         font-size: 17px;
     }
 }
+
+.countBtns {
+    color: #828ef9;
+    border: 1px solid #828ef9;
+    padding: 1px 10px;
+    margin-block: 10px;
+    border-radius: 8px;
+    margin-inline: 5px;
+  }
+  .counter {
+    border: 1px solid #d4d4d4;
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin-inline: 5px;
+  }

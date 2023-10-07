@@ -30,7 +30,7 @@ export class NavBarComponent implements OnInit {
       next: (res) => {
         if (Object.keys(res).length !== 0) {
           const products = this.prodService.getproducts().forEach((prod) => {
-            this.productcount += prod.countItems || 0;
+            this.productcount += prod.num || 0;
           });
         }
       },

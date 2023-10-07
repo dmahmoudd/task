@@ -13,7 +13,7 @@ export class ProductDetailsService {
   searchInput$=new BehaviorSubject('')
   addToCart$=new BehaviorSubject<Partial<productModel>>({})
 
-  setproduct(products:productModel){
+  setproduct(products:object){
     this.productsInCart.push(products) 
   }
   getproducts(){

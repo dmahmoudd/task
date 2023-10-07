@@ -6,5 +6,6 @@ export interface productModel{
     ProductImg?:string,
     category?:string,
     rating?: any,
-    countItems?:number
+    num?:any,
+    // productExistInCart?:any
 }

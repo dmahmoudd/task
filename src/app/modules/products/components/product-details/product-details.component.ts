@@ -57,9 +57,22 @@ export class ProductDetailsComponent implements OnInit {
   }
 
 // add items to my cart
-  addToCart(productName:productModel){
-    this.product.countItems=this.defaultCount
-    this.ProductService.addToCart$.next(productName)
-    this.ProductService.setproduct(productName)
+  addToCart(pName:productModel){
+    this.product.num=this.defaultCount
+    this.ProductService.addToCart$.next(pName)
+    // this.ProductService.setproduct(pName)
+
+    const productExistInCart = this.ProductService.getproducts().find((prod:any)=>{
+      if(prod.ProductName==pName.ProductName){
+        return prod
+      }
+    }) // find product by name
+    if (!productExistInCart) {
+      this.ProductService.productsInCart.push({...this.product}); // enhance "porduct" opject with "num" property
+      console.log(this.ProductService.productsInCart)
+      return;
+    }
+ 
+    productExistInCart.num += 1;
   }
 }

@@ -1,17 +1,27 @@
-<div *ngFor="let product of allProductsInCart" class="shadow-2xl my-3">
+<div *ngFor="let product of allProductsInCart; let i =index" class=" my-3">
     <mat-card class="example-card ">
         <mat-card-content>
             <img mat-card-image src="{{product.ProductImg}}" alt="Product image" width="50" height="50">
-            <p>
-                {{product.ProductName}}
-            </p>
+            <div class="flex justify-between">
+                <p>
+                    {{product.ProductName}}
+                </p>
+                <div>
+                    <button class="countBtns" (click)="changeCount('decrement',product, i)">-</button>
+                    <span class="counter"> {{product?.num}}</span>
+                    <button class="countBtns" (click)="changeCount('increment',product, i)">+</button>
+                </div>
+            </div>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button>items : {{product.countItems}}</button>
-            <button mat-button>Total Price : {{(product?.countItems||0) *( product?.ProductPrice||0)}} </button>
+            <button mat-button>item : {{product.num}}</button>
+            <button mat-button>item price : {{(product?.ProductPrice||0)}} </button>
+        </mat-card-actions>
+        <mat-card-actions>
+            <button mat-button>Total Price : {{(product?.num||0) *( product?.ProductPrice||0)}} </button>
         </mat-card-actions>
     </mat-card>
-  
+
 </div>
 
 <div class="flex justify-center">
